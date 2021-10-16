@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { CardItemComponent } from './shared/components/card-item/card-item.component';
+import { SearchBarComponent } from './shared/components/search-bar/search-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    CardItemComponent
+    CardItemComponent,
+    SearchBarComponent
   ],
   imports: [
     BrowserModule,
