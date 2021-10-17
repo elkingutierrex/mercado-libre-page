@@ -9,6 +9,8 @@ import { SearchBarComponent } from './shared/components/search-bar/search-bar.co
 import { HomeComponent } from './pages/home/home.component';
 import { CardItemDetailComponent } from './shared/components/card-item-detail/card-item-detail.component';
 import { BreadcrumbComponent } from './shared/components/breadcrumb/breadcrumb.component';
+import { ProductItemsComponent } from './pages/product-items/product-items.component';
+import { ItemDetailComponent } from './pages/product-items/item-detail/item-detail.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { BreadcrumbComponent } from './shared/components/breadcrumb/breadcrumb.c
     SearchBarComponent,
     HomeComponent,
     CardItemDetailComponent,
-    BreadcrumbComponent
+    BreadcrumbComponent,
+    ProductItemsComponent,
+    ItemDetailComponent
   ],
   imports: [
     BrowserModule,
