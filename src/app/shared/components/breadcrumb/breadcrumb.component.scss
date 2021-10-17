@@ -1,0 +1,10 @@
+
+.breadcrumb ::before{
+  $breadcrumb-divider: quote(">");
+  text-decoration: none;
+}
+
+a {
+  color: gray;
+  text-decoration: none;
+}
