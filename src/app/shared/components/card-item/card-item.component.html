@@ -1,19 +1,19 @@
 <div  class="card mb-3">
   <div class="row g-0">
     <div class="col-md-3">
-      <img src="../../../../assets/images/camera.png"
+      <img [src]="imageUrl? imageUrl : '../../../../assets/images/camera.png'"
             class="img-fluid rounded-start px-2 py-2 card-image"
             alt="Foto producto">
     </div>
     <div class="col-md-8">
       <div class="card-body row">
-        <h5 class="card-title">
-          Card title
-        </h5>
-        <div class="col-md-9">
-          <p class="card-text">
-            This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-          </p>
+        <h3 class="card-title">
+         {{ price | currency : '$' :'symbol':'4.0-2'}}
+        </h3>
+        <div class="col-md-9 pt-3">
+          <h5>
+            {{ title }}
+          </h5>
         </div>
         <div class="col-md-3">
 

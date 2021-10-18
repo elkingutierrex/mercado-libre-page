@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-card-item',
@@ -6,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./card-item.component.scss']
 })
 export class CardItemComponent implements OnInit {
+
+  @Input() title:String ='';
+  @Input() price:number = 0;
+  @Input() imageUrl:string = '';
+
+  @Input() objItem :object = {};
 
   constructor() { }
 

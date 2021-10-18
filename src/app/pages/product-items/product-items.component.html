@@ -1,4 +1,9 @@
 <router-outlet></router-outlet>
 <div class="container mt-4">
-  <app-card-item ></app-card-item>
+  <div *ngFor="let item of arrayItems">
+    <app-card-item  [title]='item.title'
+                    [price]='item.price'
+                    [imageUrl]='item.thumbnail'></app-card-item>
+  </div>
+
 </div>
