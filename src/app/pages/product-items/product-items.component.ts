@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { AppService } from 'src/app/services/app.service';
+import { filter } from "rxjs/operators";
 
 @Component({
   selector: 'app-product-items',
@@ -11,13 +13,16 @@ export class ProductItemsComponent implements OnInit {
   arrayItems:any = [];
   arrayResult: any = [];
 
-  constructor( private _app : AppService ) { }
+
+  constructor( private _app : AppService,
+              private route: ActivatedRoute ) { }
 
   ngOnInit(): void {
     this.getProductsByQuery();
   }
 
   getProductsByQuery (){
+    console.log('sdfsdafds')
     const query = null;
     this._app.getProductsByQuery( query ).subscribe( res =>{
       const data = res;

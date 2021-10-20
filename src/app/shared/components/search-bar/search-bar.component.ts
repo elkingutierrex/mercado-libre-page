@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, FormGroupName } from '@angular/forms';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-search-bar',
@@ -7,9 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchBarComponent implements OnInit {
 
-  constructor() { }
+  txtSearch : string = '';
+
+
+  constructor( private router : Router) {
+
+   }
 
   ngOnInit(): void {
+
+  }
+
+
+  redirectToUrlWithQuery( txtSearch:string ){
+    const timeOut = 5;
+    setTimeout(() => {
+      this.router.navigate(['/home/items'], { queryParams: { search: this.txtSearch }, queryParamsHandling:'merge'} );
+    }, timeOut);
   }
 
 }

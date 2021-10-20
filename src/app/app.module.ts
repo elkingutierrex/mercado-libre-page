@@ -12,6 +12,7 @@ import { CardItemDetailComponent } from './shared/components/card-item-detail/ca
 import { BreadcrumbComponent } from './shared/components/breadcrumb/breadcrumb.component';
 import { ProductItemsComponent } from './pages/product-items/product-items.component';
 import { ItemDetailComponent } from './pages/product-items/item-detail/item-detail.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,9 @@ import { ItemDetailComponent } from './pages/product-items/item-detail/item-deta
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
