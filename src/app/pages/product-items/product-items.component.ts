@@ -19,10 +19,11 @@ export class ProductItemsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getProductsByQuery();
+
   }
 
   getProductsByQuery (){
-    console.log('sdfsdafds')
+    this.route.queryParamMap.subscribe( item => console.log('eagc', item));
     const query = null;
     this._app.getProductsByQuery( query ).subscribe( res =>{
       const data = res;

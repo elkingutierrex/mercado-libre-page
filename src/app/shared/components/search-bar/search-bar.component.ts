@@ -23,7 +23,7 @@ export class SearchBarComponent implements OnInit {
 
 
   redirectToUrlWithQuery( txtSearch:string ){
-    const timeOut = 5;
+    const timeOut =50;
     setTimeout(() => {
       this.router.navigate(['/home/items'], { queryParams: { search: this.txtSearch }, queryParamsHandling:'merge'} );
     }, timeOut);
