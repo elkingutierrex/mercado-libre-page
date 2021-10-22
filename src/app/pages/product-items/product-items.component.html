@@ -9,6 +9,7 @@
                     (click)="redirectToUrlParam(item.id)"></app-card-item>
   </div>
 
-  <app-pagination></app-pagination>
+  <app-pagination [result]="arrayResult.paging"
+                  (nextPage)="getItemsByQuery()"></app-pagination>
 
 </div>

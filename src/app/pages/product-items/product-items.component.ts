@@ -30,6 +30,7 @@ export class ProductItemsComponent implements OnInit {
     this.route.queryParams.subscribe(params => {
       this.queryParam = params['search'];
     });
+    this.arrayItems = [];
     this._app.getItemsByQuery( this.queryParam ).subscribe( res =>{
       const data = res;
       if( !data ){

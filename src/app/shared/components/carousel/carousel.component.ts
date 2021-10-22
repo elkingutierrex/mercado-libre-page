@@ -18,15 +18,11 @@ export class CarouselComponent implements OnInit {
 
   changePosition( next : number ){
     const length = this.arrayImages.length;
-    const position =  this.pictureArrayPosition
-
-
-    if ( length >  (position + next) && next > 0 ){
-      this.pictureArrayPosition =  this.pictureArrayPosition + next;
-    } else if ((position + next) >= 0 && next < 0){
+    const position =  this.pictureArrayPosition;
+    if ((length >  (position + next) && next > 0) ||
+        ((position + next) >= 0 && next < 0) ){
       this.pictureArrayPosition =  this.pictureArrayPosition + next;
     }
-
   }
 
 }

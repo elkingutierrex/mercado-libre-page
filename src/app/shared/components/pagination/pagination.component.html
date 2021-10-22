@@ -1,15 +1,45 @@
-<nav aria-label="...">
-  <ul class="pagination">
-    <li class="page-item disabled">
-      <a class="page-link">Previous</a>
-    </li>
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
-    <li class="page-item active" aria-current="page">
-      <a class="page-link" href="#">2</a>
-    </li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item">
-      <a class="page-link" href="#">Next</a>
-    </li>
-  </ul>
-</nav>
+<div class="row">
+  <div class="row">
+    <div class="col-8">
+       <nav aria-label="...">
+      <ul class="pagination">
+        <li class="page-item btn-next" (click)="changePage(-1)">
+          <a class="page-link">Anterior</a>
+        </li>
+        <li class="page-item disabled" aria-current="page">
+          <a class="page-link" *ngIf="result && result.total">
+            Página:  {{ _app.objCtrl.actualPage }} de {{ (result.total / _app.objCtrl.limitItemsPerPage) | number : '1.0-0' }}
+          </a>
+        </li>
+        <li class="page-item btn-next" (click)="changePage(+1)">
+          <a class="page-link">Siguiente</a>
+        </li>
+      </ul>
+    </nav>
+    </div>
+    <div class="col-4">
+      <div class="col-5">
+        <span>
+          Items por pagina
+        </span>
+      </div>
+      <div class="col-7">
+        <select class="form-select"
+                aria-label="Default select example"
+                [(ngModel)]="_app.objCtrl.limitItemsPerPage"
+                (ngModelChange)="emitEvent()">
+          <option disabled>Items por pagina</option>
+          <option *ngFor="let item of arrayItemsPerPage"
+                  [value]="item">
+                  {{ item}}
+          </option>
+        </select>
+      </div>
+
+
+
+    </div>
+
+
+  </div>
+</div>
