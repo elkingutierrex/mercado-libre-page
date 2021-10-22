@@ -32,13 +32,23 @@ export class ItemDetailComponent implements OnInit {
             return
           }
           console.log(data);
-
+          this.getDescriptionItemById( this.idItem );
           this.objItem = data;
         })
       }
-
     });
-
   }
+
+  getDescriptionItemById ( idItem: any ){
+     this._app.getDescriptionItemById( idItem ).subscribe( res =>{
+          const data = res;
+          if( !data ){
+            return
+          }
+          this.objItem.addDesciption =  data;
+          console.log(this.objItem);
+        })
+  }
+
 
 }

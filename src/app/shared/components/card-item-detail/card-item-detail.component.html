@@ -27,8 +27,10 @@
     </h5>
     <p class="card-text">
      {{ product.warranty }}
-     <br>
-     Aquí deberia ir la garantía del producto, el texto de la descripción, pero la respuesta de este endpoint no provee dicha información (descripción).
+    </p>
+    <br>
+    <p *ngIf="product && product.addDesciption && product.addDesciption.plain_text">
+      {{ product.addDesciption.plain_text }}
     </p>
 
   </div>

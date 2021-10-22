@@ -35,5 +35,12 @@ export class AppService {
     return this.http.get(`${this.apiUrl}/search/getItemById`, { params:queryIn } );
   }
 
+  getDescriptionItemById( query:any ){
+    const queryIn = {
+      id : query
+    }
+    return this.http.get(`${this.apiUrl}/search/getDescriptionItemById`, { params:queryIn } );
+  }
+
 
 }
