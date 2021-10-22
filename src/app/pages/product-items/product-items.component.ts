@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AppService } from 'src/app/services/app.service';
 import { filter } from "rxjs/operators";
 
@@ -12,20 +12,25 @@ export class ProductItemsComponent implements OnInit {
 
   arrayItems:any = [];
   arrayResult: any = [];
+  queryParam:string = '';
 
 
   constructor( private _app : AppService,
-              private route: ActivatedRoute ) { }
-
-  ngOnInit(): void {
-    this.getProductsByQuery();
+              private route: ActivatedRoute,
+              private router: Router ) {
 
   }
 
-  getProductsByQuery (){
-    this.route.queryParamMap.subscribe( item => console.log('eagc', item));
-    const query = null;
-    this._app.getProductsByQuery( query ).subscribe( res =>{
+  ngOnInit(): void {
+    this.getItemsByQuery();
+
+  }
+
+  getItemsByQuery (){
+    this.route.queryParams.subscribe(params => {
+      this.queryParam = params['search'];
+    });
+    this._app.getItemsByQuery( this.queryParam ).subscribe( res =>{
       const data = res;
       if( !data ){
         return
@@ -35,4 +40,13 @@ export class ProductItemsComponent implements OnInit {
       this.arrayItems = this.arrayResult.results;
     })
   }
+
+
+  redirectToUrlParam( id:string ){
+    const timeOut =50;
+    setTimeout(() => {
+      this.router.navigate([`/home/items/${id}`] );
+    }, timeOut);
+  }
+
 }

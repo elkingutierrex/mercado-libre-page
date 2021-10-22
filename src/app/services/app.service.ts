@@ -12,8 +12,19 @@ export class AppService {
 
   constructor( private http : HttpClient ) { }
 
-  getProductsByQuery( query:any ){
-    return this.http.get(`${this.apiUrl}/search` ,  { params:query } );
+  getItemsByQuery( query:string ){
+    const queryIn = {
+      q : query,
+      limit:4
+    }
+    return this.http.get(`${this.apiUrl}/search/getItemsByQuery` ,  { params:queryIn } );
+  }
+
+  getItemById( query:any ){
+    const queryIn = {
+      id : query
+    }
+    return this.http.get(`${this.apiUrl}/search/getItemById`, { params:queryIn } );
   }
 
 

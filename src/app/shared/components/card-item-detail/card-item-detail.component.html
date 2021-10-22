@@ -1,16 +1,17 @@
 <div class="card">
 
   <div class="row">
-    <div class="col-8 detail-image">
-      <img class="detail-image"
-      src="../../../../assets/images/camera.png"
-      alt="Card image cap">
+    <div class="col-8 detail-image mt-3">
+      <app-carousel [arrayImages]="product.pictures" class="detail-image" ></app-carousel>
+      <!-- <img class="detail-image"
+       [src]="product.thumbnail"
+      alt="Card image cap"> -->
     </div>
     <div class="col-4 mt-3">
       <div class="px-3">
-        <span class="txt-product-resume"> Resume </span>
-        <h2> product title </h2>
-        <span class="txt-product-value"> $ 999.99 </span>
+        <span class="txt-product-resume"> Nuevo - {{ product.sold_quantity }} vendidos</span>
+        <h2> {{ product.title }} </h2>
+        <span class="txt-product-value"> {{ product.price | currency }} </span>
         <button type="button"
                 class="btn btn-primary btn-lg btn-block btn-buy mt-5">
                 Compar
@@ -22,10 +23,12 @@
 
   <div class="card-body">
     <h5 class="card-title">
-      Card title
+      Descripción del producto
     </h5>
     <p class="card-text">
-      This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+     {{ product.warranty }}
+     <br>
+     Aquí deberia ir la garantía del producto, el texto de la descripción, pero la respuesta de este endpoint no provee dicha información (descripción).
     </p>
 
   </div>
