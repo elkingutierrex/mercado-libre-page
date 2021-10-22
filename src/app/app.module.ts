@@ -13,6 +13,8 @@ import { BreadcrumbComponent } from './shared/components/breadcrumb/breadcrumb.c
 import { ProductItemsComponent } from './pages/product-items/product-items.component';
 import { ItemDetailComponent } from './pages/product-items/item-detail/item-detail.component';
 import { FormsModule } from '@angular/forms';
+import { PaginationComponent } from './shared/components/pagination/pagination.component';
+import { CarouselComponent } from './shared/components/carousel/carousel.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { FormsModule } from '@angular/forms';
     CardItemDetailComponent,
     BreadcrumbComponent,
     ProductItemsComponent,
-    ItemDetailComponent
+    ItemDetailComponent,
+    PaginationComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,
