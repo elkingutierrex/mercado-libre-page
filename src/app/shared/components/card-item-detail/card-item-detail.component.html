@@ -11,9 +11,10 @@
       <div class="px-3">
         <span class="txt-product-resume"> Nuevo - {{ product.sold_quantity }} vendidos</span>
         <h2> {{ product.title }} </h2>
-        <span class="txt-product-value"> {{ product.price | currency }} </span>
+        <span class="txt-product-value"> $ {{ product.price | numberFormat }} </span>
         <button type="button"
-                class="btn btn-primary btn-lg btn-block btn-buy mt-5">
+                class="btn btn-primary btn-lg btn-block btn-buy mt-5"
+                (click)="buyItem('1')">
                 Compar
         </button>
       </div>

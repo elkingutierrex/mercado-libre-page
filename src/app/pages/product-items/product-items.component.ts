@@ -12,7 +12,6 @@ export class ProductItemsComponent implements OnInit {
 
   arrayItems:any = [];
   arrayResult: any = [];
-  queryParam:string = '';
 
 
   constructor( private _app : AppService,
@@ -28,10 +27,10 @@ export class ProductItemsComponent implements OnInit {
 
   getItemsByQuery (){
     this.route.queryParams.subscribe(params => {
-      this.queryParam = params['search'];
+      this._app.objCtrl.productSearch = params['search'];
     });
     this.arrayItems = [];
-    this._app.getItemsByQuery( this.queryParam ).subscribe( res =>{
+    this._app.getItemsByQuery( this._app.objCtrl.productSearch ).subscribe( res =>{
       const data = res;
       if( !data ){
         return

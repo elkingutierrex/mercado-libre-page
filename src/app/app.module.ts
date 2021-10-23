@@ -15,6 +15,7 @@ import { ItemDetailComponent } from './pages/product-items/item-detail/item-deta
 import { FormsModule } from '@angular/forms';
 import { PaginationComponent } from './shared/components/pagination/pagination.component';
 import { CarouselComponent } from './shared/components/carousel/carousel.component';
+import { NumberFormatPipe } from './pipes/number-format.pipe';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { CarouselComponent } from './shared/components/carousel/carousel.compone
     ProductItemsComponent,
     ItemDetailComponent,
     PaginationComponent,
-    CarouselComponent
+    CarouselComponent,
+    NumberFormatPipe
   ],
   imports: [
     BrowserModule,

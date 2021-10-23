@@ -12,7 +12,8 @@ export class CardItemComponent implements OnInit {
   @Input() price:number = 0;
   @Input() imageUrl:string = '';
 
-  @Input() objItem :object = {};
+  @Input() objItem :object | any = {};
+
 
   constructor() { }
 

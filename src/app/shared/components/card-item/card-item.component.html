@@ -8,17 +8,17 @@
     <div class="col-md-8">
       <div class="card-body row">
         <h3 class="card-title">
-         {{ price | currency : '$' :'symbol':'4.0-2'}}
+         $ {{ objItem.price | numberFormat }}
         </h3>
         <div class="col-md-9 pt-3">
           <h5>
-            {{ title }}
+            {{ objItem.title }}
           </h5>
         </div>
         <div class="col-md-3">
 
             <small class="text-muted">
-              Last updated 3 mins ago
+              {{ objItem.available_quantity }} Unidades disponibles
             </small>
 
         </div>
