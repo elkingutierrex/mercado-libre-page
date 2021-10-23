@@ -18,7 +18,6 @@ export class ItemDetailComponent implements OnInit {
   ngOnInit(): void {
     console.log('Detalle');
     this.getItemById();
-
   }
 
 
@@ -31,6 +30,7 @@ export class ItemDetailComponent implements OnInit {
           if( !data ){
             return
           }
+          this.focusElement();
           console.log(data);
           this.getDescriptionItemById( this.idItem );
           this.objItem = data;
@@ -48,6 +48,18 @@ export class ItemDetailComponent implements OnInit {
           this.objItem.addDesciption =  data;
           console.log(this.objItem);
         })
+  }
+
+  async focusElement(){
+    const timeout = 1000;
+    const detailProduct = document.getElementById("inputSearch");
+    if( detailProduct ){
+      detailProduct.focus({preventScroll:false});
+      setTimeout(() => {
+        detailProduct.blur();
+      }, timeout);
+
+    }
   }
 
 
