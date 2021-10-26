@@ -14,7 +14,7 @@ export class ProductItemsComponent implements OnInit {
   arrayResult: any = [];
 
 
-  constructor( private _app : AppService,
+  constructor( public _app : AppService,
               private route: ActivatedRoute,
               private router: Router ) {
 
@@ -26,11 +26,13 @@ export class ProductItemsComponent implements OnInit {
   }
 
   getItemsByQuery (){
+    this._app.startSearch();
     this.route.queryParams.subscribe(params => {
       this._app.objCtrl.productSearch = params['search'];
     });
     this.arrayItems = [];
     this._app.getItemsByQuery( this._app.objCtrl.productSearch ).subscribe( res =>{
+      this._app.catchError( res );
       const data = res;
       if( !data ){
         return

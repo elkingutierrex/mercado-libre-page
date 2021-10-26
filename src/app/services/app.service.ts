@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
+declare const alertify : any;
 
 @Injectable({
   providedIn: 'root'
@@ -14,10 +15,29 @@ export class AppService {
     actualPage        : 1,
     offsetPage        : 0,
     idItemSearch      : '',
-    productSearch     : ''
+    productSearch     : '',
+    swSearchComplete  : false
   }
 
   constructor( private http : HttpClient ) { }
+
+  startSearch(){
+    this.objCtrl.swSearchComplete = false;
+  }
+
+  catchError( res:any ){
+    const responseHttp = {
+      _200:200,
+      _404:404
+    }
+
+    this.objCtrl.swSearchComplete = true;
+
+    if( res.status === responseHttp._404 ){
+      alertify.message(res.message)
+    }
+
+  }
 
   getItemsByQuery( query:string ){
     const queryIn = {

@@ -13,7 +13,7 @@ export class ItemDetailComponent implements OnInit {
   idItem:string|null='';
   objItem: Product|any ={};
   constructor( private route: ActivatedRoute,
-              private _app: AppService) { }
+              public _app: AppService) { }
 
   ngOnInit(): void {
     this.getItemById();
