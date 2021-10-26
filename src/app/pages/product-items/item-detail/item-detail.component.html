@@ -1,5 +1,8 @@
-<div class="container mt-5" >
+<div class="container mt-5" *ngIf="objItem.title; else noData">
   <app-breadcrumb [arrayTags]="objItem.tags"></app-breadcrumb>
-
   <app-card-item-detail [product]="objItem"></app-card-item-detail>
 </div>
+
+<ng-template #noData>
+  <app-no-data></app-no-data>
+</ng-template>

@@ -16,12 +16,12 @@ export class ItemDetailComponent implements OnInit {
               private _app: AppService) { }
 
   ngOnInit(): void {
-    console.log('Detalle');
     this.getItemById();
   }
 
 
   getItemById (){
+    this.objItem  = {};
     this.route.paramMap.subscribe(params => {
       if(params.has('id')){
         this.idItem = params.get('id');
