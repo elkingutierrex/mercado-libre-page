@@ -1,5 +1,6 @@
 <router-outlet></router-outlet>
 <h3 class="pt-5">Busqueda relacionada</h3>
+<app-no-data></app-no-data>
 <div class="container mt-4">
   <div *ngFor="let item of arrayItems">
     <app-card-item  [id]="item.id"

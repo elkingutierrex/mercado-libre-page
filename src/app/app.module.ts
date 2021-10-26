@@ -16,6 +16,7 @@ import { FormsModule } from '@angular/forms';
 import { PaginationComponent } from './shared/components/pagination/pagination.component';
 import { CarouselComponent } from './shared/components/carousel/carousel.component';
 import { NumberFormatPipe } from './pipes/number-format.pipe';
+import { NoDataComponent } from './shared/components/no-data/no-data.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { NumberFormatPipe } from './pipes/number-format.pipe';
     ItemDetailComponent,
     PaginationComponent,
     CarouselComponent,
-    NumberFormatPipe
+    NumberFormatPipe,
+    NoDataComponent
   ],
   imports: [
     BrowserModule,
